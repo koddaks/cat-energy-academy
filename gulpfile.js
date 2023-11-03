@@ -8,7 +8,7 @@ import autoprefixer from "autoprefixer";
 import squoosh from "gulp-libsquoosh";
 import svgo from "gulp-svgmin";
 import svgstore from "gulp-svgstore";
-import browser from "browser-sync";
+import browser, { reload } from "browser-sync";
 import htmlmin from "gulp-htmlmin";
 import terser from "gulp-terser";
 import { deleteAsync as del } from "del";
@@ -129,7 +129,8 @@ const server = (done) => {
 
 const watcher = () => {
   gulp.watch("source/sass/**/*.scss", gulp.series(styles));
-  gulp.watch("source/*.html").on("change", browser.reload);
+  // gulp.watch("source/*.html", gulp.series(html, browser.reload));
+  gulp.watch("source/*.html").on("change", gulp.series(html, browser.reload));
 };
 
 // Build
@@ -138,7 +139,7 @@ export const build = gulp.series(
   clean,
   copy,
   optimizeImages,
-  gulp.parallel(styles, html, scripts, svg, sprite, createWebP)
+  gulp.parallel(styles, html, scripts, svg, sprite)
 );
 
 // Default
@@ -147,6 +148,6 @@ export default gulp.series(
   clean,
   copy,
   copyImages,
-  gulp.parallel(styles, html, scripts, svg, sprite, createWebP),
+  gulp.parallel(styles, html, scripts, svg, sprite),
   gulp.series(server, watcher)
 );
