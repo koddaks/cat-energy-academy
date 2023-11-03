@@ -196,7 +196,7 @@
 
 .card__link-image {
   position: relative;
-  width: 32px;
+  min-width: 32px;
   height: 16px;
 
   &::before {
