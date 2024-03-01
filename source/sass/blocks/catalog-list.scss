@@ -21,16 +21,15 @@
 }
 
 .catalog-list__item {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
-  margin: 0 0 0 0;
-  padding: 0 0 24px 0;
-
+  min-height: 165px;
+  margin: 0;
+  padding: 0 0 25px;
   display: grid;
-  grid-template-columns: 140px 2fr 1fr;
-  grid-template-rows: min-content 14px 1fr min-content;
-
-  // border-bottom: 1px solid $special_grey-2;
+  grid-template-columns: 50% 27% 23%;
+  grid-template-rows: min-content 11px 1fr min-content;
 
   @media (max-width: $mobile-width-only) {
     &::after {
@@ -47,6 +46,7 @@
       .catalog-list__item-image {
         width: 84px;
         height: 100px;
+        margin: 0 0 -9px 0;
       }
     }
   }
@@ -54,7 +54,7 @@
   @media (min-width: $tablet-width) {
     width: 44%;
     min-width: 324px;
-    padding: 0 0 39px 0;
+    padding: 0 0 40px 0;
     background-color: #f2f2f2;
     grid-template-areas:
       ". image ."
@@ -65,20 +65,28 @@
         37px,
         auto
       );
-    // grid-template-rows: 191px min-content min-content min-content;
     grid-template-rows: 171px min-content min-content min-content;
 
     &:nth-child(even) {
       .catalog-list__item-image {
         width: 172px;
         height: 202px;
-        margin-top: -30%;
+        margin-bottom: 40px;
+        @media (min-width: $desktop-width) {
+          margin-bottom: 46px;
+        }
       }
     }
+  }
 
-    &:last-child {
-      .catalog-list__item-image {
-        margin-top: 0;
+  &:last-child {
+    .catalog-list__item-image {
+      width: 30px;
+      height: 30px;
+      margin: 7px 0 23px 0;
+
+      @media (min-width: $tablet-width) {
+        margin-bottom: 0;
         width: 60px;
         height: 60px;
       }
@@ -102,6 +110,29 @@
   }
 }
 
+.catalog-list__item-link {
+  text-decoration: none;
+  color: $black;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: block;
+  text-align: start;
+  margin: 0 0 5px 0;
+
+  @media (min-width: $tablet-width) {
+    grid-area: title;
+    text-align: -webkit-center;
+    margin: -12px 0 23px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: -9px 0 23px 4px;
+  }
+
+  &:focus {
+    outline: 3px solid #83b3d3;
+  }
+}
 
 .catalog-list__item-title {
   margin: 0;
@@ -118,13 +149,29 @@
     grid-area: title;
     justify-self: center;
 
-    margin: 0 0 21px 0;
+    font-size: 20px;
+    line-height: 1.2;
+
+
+
+    width: 62%;
+    text-align: center;
+  }
+
+  @media (min-width: 769px) {
+    text-wrap: balance;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 80%;
   }
 }
 
 picture {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
+  text-align: center;
+  align-self: self-end;
 
   @media (min-width: $tablet-width) {
     grid-area: image;
@@ -135,7 +182,7 @@ picture {
 .catalog-list__item-image {
   grid-column: 1 / 2;
   grid-row: 1 / 4;
-  padding: 14px 36px 12px 36px;
+  margin: 0 0 0 0;
 
   @media (min-width: $tablet-width) {
     padding: 0;
@@ -144,13 +191,17 @@ picture {
     grid-area: image;
     justify-self: center;
 
-    margin: -20% 0 34px 0;
+    margin: 0 0 40px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 48px;
   }
 }
 
 .catalog-list__button {
   width: 100%;
-  margin: 13px 0 0 0;
+  margin: 21px 0 0 0;
   padding: 10px 0;
   grid-row: 4 / 5;
   grid-column: 1 / -1;
@@ -163,11 +214,12 @@ picture {
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.25;
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
     grid-area: button;
+    margin: 0;
   }
 }
 
@@ -178,8 +230,19 @@ picture {
   grid-template-columns: auto max-content auto;
   grid-template-rows: 2fr min-content min-content min-content;
 
+  padding-bottom: 26px;
+
   @media (min-width: $tablet-width) {
+    grid-template-columns: minmax(37px, auto) minmax(159px, 431px) minmax(
+        37px,
+        auto
+      );
+    grid-template-rows: 160px min-content min-content min-content;
+
     width: 44%;
+    background-color: $white;
+    box-shadow: 0 0 1px 1px $basic_grey;
+    text-align: center;
   }
 
   @media (min-width: 1024px) {
@@ -190,6 +253,7 @@ picture {
   @media (min-width: $desktop-width) {
     max-width: 20%;
     min-height: 429px;
+    max-height: 431px;
   }
 
   @media (min-width: 1980px) {
@@ -198,7 +262,7 @@ picture {
 }
 
 .catalog-list__item—show-all--image {
-  margin: 0 0 23px 0;
+  margin: 0 0 25px 0;
   padding: 0;
   grid-column: 2 / 3;
   grid-row: 1 / 2;
@@ -212,6 +276,10 @@ picture {
   grid-column: 2 / 3;
   grid-row: 2 / 3;
   justify-self: center;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 20px 0;
+  }
 }
 
 .catalog-list__item—show-all--text {
@@ -221,10 +289,25 @@ picture {
   grid-column: 2 / 3;
   grid-row: 3 / 4;
   justify-self: center;
+
+  font-family: $arial;
+  font-size: 12px;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 0 87px 0;
+    padding: 0 12px;
+
+    font-size: 16px;
+    line-height: 1.12;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0;
+  }
 }
 
 .catalog-list__item—show-all--button {
-  margin: auto auto 13px;
+  margin: 0;
   grid-column: 1 / 4;
   grid-row: 4 / 5;
 
@@ -232,6 +315,15 @@ picture {
   color: $special_dark-grey;
 
   @media (min-width: $tablet-width) {
-    width: 76%;
+    grid-column: 2 / 3;
+    width: 100%;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: auto auto 38px;
+  }
+
+  &:hover {
+    background-color: $special_grey-2;
   }
 }

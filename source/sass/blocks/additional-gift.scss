@@ -1,9 +1,10 @@
 .additional-gift {
-  padding: 0 61px 0 58px;
+  box-sizing: border-box;
+  padding: 31px 20px 20px 20px;
   background-image: image-set(
-      url("../../img/background/additional-gift-bg.png") 1x,
-      url("../../img/background/additional-gift-bg@2x.png") 2x
-    );
+    url("../../img/background/additional-gift-bg.png") 1x,
+    url("../../img/background/additional-gift-bg@2x.png") 2x
+  );
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -17,14 +18,14 @@
 
   min-height: 289px;
 
-  gap: 48px;
+  gap: 46px;
 
   @media (min-width: $tablet-width) {
-    padding: 0 77px 0 124px;
+    padding: 0 124px 0 77px;
     min-height: 200px;
 
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     background-image: image-set(
       url("../../img/background/additional-gift-bg-tablet.png") 1x,
       url("../../img/background/additional-gift-bg-tablet@2x.png") 2x
@@ -33,17 +34,25 @@
 
   @media (min-width: $desktop-width) {
     padding: 0;
+    gap: 50px;
     background-image: image-set(
       url("../../img/background/additional-gift-bg-desktop.png") 1x,
       url("../../img/background/additional-gift-bg-desktop@2x.png") 2x
     );
 
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
+  }
+}
+
+.additional-gift__image {
+  @media (min-width: $desktop-width) {
+    padding: 54px 0 0 0;
   }
 }
 
 .additional-gift__text {
+  width: 65%;
   margin: 0;
   padding: 0;
 
@@ -51,4 +60,14 @@
   font-family: $arial;
   font-size: 16px;
   line-height: 1.25;
+
+  @media (min-width: $tablet-width) {
+    width: 32%;
+    text-align: start;
+  }
+
+  @media (min-width: $laptop) {
+    width: 65%;
+    text-align: center;
+  }
 }

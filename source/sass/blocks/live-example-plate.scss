@@ -8,10 +8,20 @@
 
   padding: 0 0 40px 0;
 
+  @media (min-width: $mobile-l-size) {
+    padding: 0 0 80px 0;
+  }
+
+  @media (min-width: $tablet-width) {
+    gap: 41px;
+    justify-content: unset;
+  }
+
   @media (min-width: $desktop-width) {
     width: 100%;
     justify-content: flex-start;
     gap: 42px;
+    row-gap: 58px;
   }
 }
 
@@ -22,24 +32,29 @@
 }
 
 .live-example-plate__item--weight {
-  padding: 16px 42px;
+  padding: 10px 42px;
 
   @media (min-width: $tablet-width) {
-    padding: 22px 61px;
+    padding: 21px 56px;
   }
 }
 
 .live-example-plate__item--days {
-  padding: 16px 21px;
+  padding: 11px 21px;
 
   @media (min-width: $tablet-width) {
-    padding: 22px 40px;
+    padding: 22px 30px;
   }
 }
 
 .live-example-plate__value {
   font-size: 24px;
   font-weight: 400;
+
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 0.83;
+  }
 }
 
 .live-example-plate__text {
@@ -67,38 +82,34 @@
   }
 }
 
-@media (min-width: $tablet-width) {
-  .live-example-plate__text br {
-    display: none;
-  }
-}
-
 .live-example-plate__text--weight {
-  padding: 0 12px;
-  top: 51px;
-  right: 20px;
+  width: 82px;
+  top: 45px;
+  right: 21px;
 
   @media (min-width: $tablet-width) {
+    width: 100px;
     padding: 0 8px;
-    right: 22px;
-    top: 67px;
+    right: 21px;
+    top: 61px;
   }
 }
 
 .live-example-plate__text--days {
-  padding: 0 12px;
-  top: 51px;
-  right: 20px;
+  width: 82px;
+  top: 45px;
+  right: 21px;
 
   @media (min-width: $tablet-width) {
+    width: 127px;
     padding: 0 8px;
-    top: 67px;
-    right: 8px;
+    top: 63px;
+    right: 9px;
   }
 }
 
 .live-example-plate__expenses {
-  margin: 4px 0 0 0;
+  margin: 5px 0 0 0;
   padding: 0;
 
   font-size: 14px;
@@ -107,6 +118,7 @@
   text-transform: uppercase;
 
   @media (min-width: $tablet-width) {
+    width: 42%;
     margin: 0;
 
     display: flex;
@@ -130,24 +142,12 @@
 
   @media (min-width: $tablet-width) {
     min-height: 462px;
+    margin-top: -170px;
   }
 
   @media (min-width: $desktop-width) {
+    margin-top: 0;
     width: 50%;
     z-index: 1;
-  }
-}
-
-.live-example-plate__image {
-  margin: 0 0 23px 0;
-
-  @media (min-width: $tablet-width) {
-    margin: -170px 0 42px 0;
-    width: 592px;
-    height: 511px;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin: 0 0 42px 0;
   }
 }

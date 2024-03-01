@@ -9,7 +9,7 @@
 
   @media (max-width: $mobile-width-only) {
     position: relative;
-    padding: 10px 20px 17px 20px;
+    padding: 12px 20px 14px 20px;
     justify-content: space-between;
     border-bottom: 1px solid #e6e6e6;
   }
@@ -34,18 +34,40 @@
   @media (min-width: $tablet-width) {
     height: 52px;
     width: 174px;
+    margin: -8px 0 0 0;
   }
 
   @media (min-width: $desktop-width) {
     height: 59px;
     width: 202px;
+    margin: 0 0 0 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }
 
 .main-header__title {
   @media (max-width: $mobile-width-only) {
     margin: 0 auto;
-    padding: 0 34px 0 0;
+    padding: 5px 36px 0 0;
+  }
+}
+
+.main-header__logo-image {
+  @media (min-width: $tablet-width) {
+    width: 174px;
+    height: 52px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 202px;
+    height: 60px;
   }
 }
 

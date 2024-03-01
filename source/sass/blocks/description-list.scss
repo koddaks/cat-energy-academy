@@ -15,14 +15,25 @@
 
     gap: 8px;
   }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 33px 4px;
+  }
 }
 
 .description-list__item {
   display: flex;
   justify-content: space-between;
 
+  font-size: 12px;
+  font-family: $arial;
+  line-height: 1.33;
+
   @media (min-width: $tablet-width) {
     padding: 0 0 7px 0;
     border-bottom: 1px solid $special_grey;
+
+    font-size: 16px;
+    line-height: 1;
   }
 }

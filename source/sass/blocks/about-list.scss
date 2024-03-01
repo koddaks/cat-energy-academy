@@ -14,12 +14,12 @@
   @media (min-width: $tablet-width) {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 137px;
+    gap: 150px;
     row-gap: 37px;
   }
 
   @media (min-width: $desktop-width) {
-    gap: 80px;
+    gap: 93px;
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -35,14 +35,19 @@
   counter-increment: about-list-counter;
 
   @media (min-width: $tablet-width) {
-    align-items: normal;
-    width: 35%;
+    width: 33%;
     min-height: 280px;
+    align-items: normal;
     flex-direction: column;
+    gap: 32px;
+  }
+
+  @media (min-width: $laptop) {
+    width: 42%;
   }
 
   @media (min-width: $desktop-width) {
-    width: 20%;
+    width: 19%;
   }
 }
 
@@ -56,8 +61,12 @@
     position: absolute;
     color: $basic_grey;
     z-index: -1;
-    top: -80px;
-    right: 0;
+    top: -78px;
+    right: -14px;
+  }
+
+  .about-list__item:first-child::after {
+    right: 4px;
   }
 }
 

@@ -8,18 +8,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
+  gap: 15px;
 
   @media (min-width: $tablet-width) {
-    padding: 63px 30px 60px 30px;
-    // justify-content: space-around;
+    padding: 56px 30px 60px 30px;
+
     flex-direction: row;
     gap: 0;
-    // gap: 140px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 63px  110px 62px 110px;
+    padding: 53px 110px 62px;
   }
 }
 
@@ -42,5 +41,15 @@
     width: 33%;
     padding: 0;
     justify-content: start;
+  }
+}
+
+.social-contacts__logo-title {
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 }

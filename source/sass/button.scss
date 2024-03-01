@@ -11,4 +11,14 @@
   font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $basic_green2;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }

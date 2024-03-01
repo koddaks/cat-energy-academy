@@ -9,17 +9,18 @@
   @media (min-width: $tablet-width) {
     color: $black;
     min-height: 706px;
-    padding: 62px 120px 84px 120px;
+    padding: 51px 120px 104px 120px;
   }
 
   @media (min-width: $desktop-width) {
-    padding: 214px 190px 0 190px;
+    padding: 222px 190px 0 190px;
+    min-height: 480px;
   }
 }
 
 .functional-food__wrapper {
   @media (max-width: $mobile-width-only) {
-    height: 302px;
+    min-height: 302px;
     display: flex;
     flex-direction: column;
     background-image: image-set(
@@ -65,7 +66,7 @@
 }
 
 .functional-food__title {
-  margin: 27px 0 25px 0;
+  margin: 26px 0 24px 0;
   padding: 0 35px 0 36px;
 
   font-size: 36px;
@@ -116,9 +117,9 @@
     width: 709px;
     height: 609px;
     position: absolute;
-    left: 15%;
-    margin-left: -89px;
-    top: 30%;
+    left: 28%;
+    margin-left: -186px;
+    top: 28%;
     margin-top: 12px;
     z-index: -1;
   }
@@ -127,7 +128,7 @@
     width: 552px;
     height: 499px;
     left: 39%;
-    margin-left: 0;
+    margin-left: -4px;
     top: 20%;
     margin-top: 0;
     z-index: 0;
@@ -151,6 +152,8 @@
   @media (min-width: $tablet-width) {
     margin: 0;
     align-self: start;
-    padding: 18px 55px;
+    padding: 17px 27px;
+    font-size: 20px;
+    line-height: 1;
   }
 }

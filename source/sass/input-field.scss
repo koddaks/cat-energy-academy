@@ -2,20 +2,72 @@
   background-repeat: no-repeat;
   background-position: right 15px bottom 50%;
 
+  &:hover {
+    outline: 1px solid $special_grey;
+  }
+
+  &:focus {
+    outline: 2px solid $special_dark-grey;
+  }
+
   @media (min-width: $tablet-width) {
     background-position: right 20px bottom 50%;
   }
 }
 
 .input-field--email {
+  padding: 12px 10px 12px 10px;
   background-image: url("../img/icons/email.svg");
+
+  @media (min-width: $tablet-width) {
+    padding: 8px 20px;
+    background-position: right 13px bottom 50%;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position: right 18px bottom 50%;
+  }
+
+  &:focus {
+    background-image: url("../img/icons/email-green.svg");
+  }
 }
 
 .input-field--phone {
+  padding: 13px 10px 12px 10px;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    appearance: none;
+  }
+
+  -moz-appearance: textfield;
+
   background-image: url("../img/icons/phone.svg");
   background-position: right 13px bottom 50%;
 
+  &:focus {
+    background-image: url("../img/icons/phone-green.svg");
+  }
+
   @media (min-width: $tablet-width) {
-    background-position: right 17px bottom 50%;
+    padding: 6px 10px 10px 14px;
+    background-position: right 12px bottom 50%;
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position: right 15px bottom 50%;
+  }
+}
+
+.input-field--error {
+  outline: 2px solid $status_error;
+
+  &.input-field--email {
+    background-image: url("../img/icons/email-red.svg");
+  }
+
+  &.input-field--phone {
+    background-image: url("../img/icons/phone-red.svg");
   }
 }

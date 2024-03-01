@@ -1,23 +1,36 @@
 .social-list {
   width: 100%;
   margin: 0;
-  padding: 0 0 21px 0;
+  padding: 4px 0 17px 0;
   list-style: none;
 
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 4px;
 
   @media (min-width: $tablet-width) {
     width: 33%;
     padding: 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0 0 0 6px;
   }
 }
 
 .social-list__link {
   text-decoration: none;
   padding: 10px;
-  cursor: alias;
+  cursor: pointer;
+  color: #666666;
+
+  &:hover {
+    color: $basic_green;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }

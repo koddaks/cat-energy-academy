@@ -25,9 +25,11 @@
 
   @media (min-width: $desktop-width) {
     width: 565px;
+    padding: 61px 70px 61px 78px;
+    box-sizing: border-box;
     position: absolute;
     background-color: $white;
-    top: 25%;
+    top: 22%;
     left: 110px;
   }
 }
@@ -60,7 +62,7 @@
   line-height: 1.42;
 
   @media (min-width: $tablet-width) {
-    width: 25%;
+    width: 30%;
     text-align: right;
     font-family: $arial;
     font-size: 16px;
@@ -72,8 +74,9 @@
     justify-content: space-between;
   }
 
-  @media (min-width: $tablet-width) {
-    width: 30%;
+  @media (min-width: $desktop-width) {
+    width: 40%;
+    text-align: start;
   }
 }
 

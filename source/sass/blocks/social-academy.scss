@@ -1,8 +1,7 @@
 .social-academy {
   width: 100%;
-  // min-width: 280px;
   margin: 0;
-  padding: 0;
+  padding: 8px 0 0 0;
   list-style: none;
 
   display: flex;
@@ -12,12 +11,35 @@
   border-bottom: none;
 
   @media (min-width: $tablet-width) {
-    width: 33%;
+    width: 34%;
     justify-content: flex-end;
+    padding: 0;
     gap: 22px;
   }
 }
 
 .social-academy__link {
+  color: #666666;
   text-decoration: none;
+
+  &:hover {
+    color: $basic_green;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+
+.social-academy__item--title:hover ~ .social-academy__item--logo .social-academy__image {
+  @media (min-width: $tablet-width) {
+    color: $basic_green;
+  }
+}
+
+.social-academy__item--title:active ~ .social-academy__item--logo .social-academy__image {
+  @media (min-width: $tablet-width) {
+    opacity: 0.3;
+  }
 }
